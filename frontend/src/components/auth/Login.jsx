@@ -24,7 +24,7 @@ function Login({ onToggleView }) {
         return;
       }
       
-      const success = await login({ name: email.split('@')[0], email });
+      const success = await login({ email, password });
       if (!success) {
         setError('Failed to log in');
       }

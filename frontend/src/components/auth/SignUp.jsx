@@ -10,7 +10,7 @@ function SignUp({ onToggleView }) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   
-  const { login, googleSignIn } = useAuth();
+  const { register, googleSignIn } = useAuth();
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,14 +31,12 @@ function SignUp({ onToggleView }) {
       
       setLoading(true);
       
-      // In a real app, this would register a new user
-      // For this demo, we'll just log them in
-      const success = await login({ name, email });
+      const success = await register({ name, email, password });
       if (!success) {
         setError('Failed to create account');
       }
     } catch (error) {
-      setError('Failed to create account');
+      setError(error.message);
     }
     
     setLoading(false);

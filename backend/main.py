@@ -16,7 +16,7 @@ def prepare_merge_inputs(excel_file, selected_routes, filters=None):
     for route in selected_routes:
         route_stops = stops_df[stops_df['Route'] == route]['Location'].tolist()
         if route_stops:
-            routes[f"Route {route}"] = route_stops
+            routes[f"{route}"] = route_stops
     
     stop_demands = passengers_df.groupby('Boarding Point').size().to_dict()
     
@@ -102,7 +102,7 @@ def save_overall_statistics(all_logs):
     print(f"Total merge operations: {total_merge_ops}")
     print(f"Route reduction: {total_removed_routes} ({(total_removed_routes / total_initial_routes * 100):.2f}%)")
 
-if __name__ == '__main__':
+def merge(filters):
     excel_file = 'cleaned_file.xlsx'
     selected_routes_groups = [
         ['1', '7', '9a', '9b', '18'],
@@ -120,11 +120,6 @@ if __name__ == '__main__':
         ['9'],
         #['17']
     ]
-    
-    filters = {
-        'SSN': [1, 'Faculty'],
-        'SNU': [2]
-    }
     
     # Create a directory for merged routes if it doesn't exist
     os.makedirs('merged_routes', exist_ok=True)
@@ -169,3 +164,5 @@ if __name__ == '__main__':
     
     # Display overall statistics
     save_overall_statistics(all_logs)
+
+    return sorted_merged_routes, all_logs

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../components/layout/Header';
-import Sidebar from '../components/sidebar/Sidebar';
 import MapView from '../components/map/MapView';
+import Sidebar from '../components/sidebar/Sidebar'; // ✅ Import Sidebar
 import { busRoutePaths as defaultBusRoutePaths } from '../data/extracted_data';
 
 function Dashboard() {
@@ -52,35 +52,31 @@ function Dashboard() {
     fetchRoutes();
   }, [filters]);
 
-  const getFilteredBuses = () => {
-    if (selectedBuses.length === 0) return routeData;
-    return routeData.filter(bus => selectedBuses.includes(bus.busNumber));
+  const handleFilterChange = (updatedFilters) => {
+    setFilters(updatedFilters);
   };
 
-  const handleBusSelection = (busNumber) => {
+  const handleBusSelect = (busNumber) => {
     setSelectedBuses(prev =>
       prev.includes(busNumber)
         ? prev.filter(b => b !== busNumber)
         : [...prev, busNumber]
     );
   };
-
-  const handleFilterChange = (newFilters) => {
-    setFilters(newFilters);
-  };
-
-  const handleScheduleTypeChange = (type) => {
-    setScheduleType(type);
-  };
-
-  const clearFilters = () => {
-    const defaultFilters = {
+  
+  const handleClearFilters = () => {
+    setFilters({
       ssnYears: { year1: false, year2: false, year3: false, year4: false },
       snuYears: { year1: false, year2: false, year3: false, year4: false },
       ssnFaculty: false,
       snuFaculty: false,
-    };
-    setFilters(defaultFilters);
+    });
+    setSelectedBuses([]);
+  };
+
+  const getFilteredBuses = () => {
+    if (selectedBuses.length === 0) return routeData;
+    return routeData.filter(bus => selectedBuses.includes(bus.busNumber));
   };
 
   return (
@@ -89,23 +85,19 @@ function Dashboard() {
       <div className="flex flex-1 overflow-hidden">
         <Sidebar
           scheduleType={scheduleType}
-          onScheduleTypeChange={handleScheduleTypeChange}
+          onScheduleTypeChange={setScheduleType}
           filters={filters}
           onFilterChange={handleFilterChange}
-          onClearFilters={clearFilters}
+          onClearFilters={handleClearFilters}
           buses={routeData}
           selectedBuses={selectedBuses}
-          onBusSelect={handleBusSelection}
+          onBusSelect={handleBusSelect}
         />
-
-        {console.log("Filtered Buses:", getFilteredBuses())}
-        {/*
-        <div className="flex-1 overflow-auto p-6">
+        <div className="flex-1 overflow-auto">
           <MapView
             busRoutes={getFilteredBuses()}
           />
         </div>
-        */}
       </div>
     </div>
   );

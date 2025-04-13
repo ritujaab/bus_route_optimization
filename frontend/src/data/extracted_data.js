@@ -990,11 +990,6 @@ export const stopwisePassengerCount = [
   },
   {
     "busNumber": "20",
-    "stopName": "Srinivasapuram(BATA\\Showroom)",
-    "passengerCount": 3
-  },
-  {
-    "busNumber": "20",
     "stopName": "D'Silva Road",
     "passengerCount": 1
   },
@@ -3228,13 +3223,6 @@ export const stopLocations = [
   },
   {
     "busNumber": "Bus 20",
-    "latitude": 12.9665479759505,
-    "longitude": 79.9490928585587,
-    "location": "Srinivasapuram(BATA\\Showroom)",
-    "exactLocation": "BATA SHOWROOM OMR, 365, Rajiv Gandhi IT Expy, Kandhanchavadi, Perungudi, Chennai, Tamil Nadu 600096"
-  },
-  {
-    "busNumber": "Bus 20",
     "latitude": 12.7513279,
     "longitude": 80.2041871,
     "location": "College",
@@ -5372,7 +5360,6 @@ export const busRoutePaths = [
       "Ajantha",
       "Valluvar Statue",
       "LUZ Corner",
-      "Srinivasapuram(BATA\\Showroom)",
       "College"
     ]
   },

@@ -2,11 +2,6 @@ from copy import deepcopy
 from datetime import datetime
 import json
 
-MAX_CAPACITY = 60
-DISTANCE_THRESHOLD = 3.0  # in km or whatever unit
-DEMAND_IGNORE_THRESHOLD = 0
-MAX_DEMAND_SUM_FOR_FAR_STOPS = 0
-
 class MergeLogger:
     def __init__(self):
         self.log = {
@@ -59,51 +54,44 @@ class MergeLogger:
             json.dump(self.log, f, indent=2)
         return self.log
 
-def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop_demands, faculty_stops):
+def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop_demands, faculty_stops, constraints):
     """
     Merge routes while respecting constraints with proper demand calculation.
     If no route can be removed, revert to original routes.
     """
+    MAX_CAPACITY = constraints['MAX_CAPACITY']
+    DISTANCE_THRESHOLD = constraints['DISTANCE_THRESHOLD']
+    DEMAND_IGNORE_THRESHOLD = constraints['DEMAND_IGNORE_THRESHOLD']
+    MAX_DEMAND_SUM_FOR_FAR_STOPS = constraints['MAX_DEMAND_SUM_FOR_FAR_STOPS']
+
     # Save original routes and demands
     original_routes = deepcopy(routes)
     logger = MergeLogger()
     
-    # Initialize route_stop_demands if not provided
     if route_stop_demands is None:
         route_stop_demands = {}
         stop_route_count = {}
         
-        # Count how many routes each stop appears in
         for route_id, stops in routes.items():
             for stop in stops:
-                if stop not in stop_route_count:
-                    stop_route_count[stop] = 0
-                stop_route_count[stop] += 1
+                stop_route_count[stop] = stop_route_count.get(stop, 0) + 1
         
-        # Distribute demand evenly among routes containing each stop
         for route_id, stops in routes.items():
             route_stop_demands[route_id] = {}
             for stop in stops:
-                if stop in stop_demands:
-                    route_stop_demands[route_id][stop] = stop_demands[stop] / stop_route_count[stop]
-                else:
-                    route_stop_demands[route_id][stop] = 0
+                route_stop_demands[route_id][stop] = stop_demands.get(stop, 0) / stop_route_count[stop]
     else:
         route_stop_demands = deepcopy(route_stop_demands)
     
-    # Keep a copy of the original route_stop_demands
     original_route_stop_demands = deepcopy(route_stop_demands)
     
-    # Calculate total demand for each route PROPERLY from route_stop_demands
     route_demands = {
         route_id: sum(demands.values())
         for route_id, demands in route_stop_demands.items()
     }
     
-    # Log initial state with proper demand calculation
     logger.log_initial_state(original_routes, route_demands, original_route_stop_demands)
     
-    # Track if any routes were removed during the process
     any_route_removed = False
     alive_routes = deepcopy(routes)
     
@@ -114,7 +102,6 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
             candidate_route = alive_routes[remove_route_id]
             stops_assigned = []
             
-            # Try to assign each stop to best alive route
             stop_assignments = []
             temp_routes = deepcopy(alive_routes)
             temp_route_demands = deepcopy(route_demands)
@@ -127,7 +114,7 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
                 stop_route_demand = route_stop_demands[remove_route_id].get(stop, 0)
                 
                 if stop_route_demand <= DEMAND_IGNORE_THRESHOLD and stop not in faculty_stops:
-                    continue #Ignore low demand stop unless a faculty is boarding that stop
+                    continue
                 
                 best_increase = float('inf')
                 best_route_id = None
@@ -148,14 +135,13 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
                         if stop_to_college_dist >= current_to_college_dist:
                             continue
                         
-                        if i == len(alive_stops) - 1:
-                            next_stop = college_stop
-                        else:
-                            next_stop = alive_stops[i+1]
-                            next_to_college_dist = distance_matrix[next_stop][college_stop]
-                            
-                            if not (current_to_college_dist >= stop_to_college_dist >= next_to_college_dist):
-                                continue
+                        next_stop = alive_stops[i+1] if i < len(alive_stops) - 1 else college_stop
+                        next_to_college_dist = distance_matrix[next_stop][college_stop]
+                        
+                        if i < len(alive_stops) - 1 and not (
+                            current_to_college_dist >= stop_to_college_dist >= next_to_college_dist
+                        ):
+                            continue
                         
                         dist_current_to_next = distance_matrix[current_stop][next_stop]
                         dist_current_to_stop = distance_matrix[current_stop][stop]
@@ -171,12 +157,9 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
                     stop_assignments.append((stop, best_route_id, best_insert_pos))
                     temp_routes[best_route_id].insert(best_insert_pos, stop)
                     
-                    if stop not in temp_route_stop_demands[best_route_id]:
-                        temp_route_stop_demands[best_route_id][stop] = 0
-                    temp_route_stop_demands[best_route_id][stop] += stop_route_demand
+                    temp_route_stop_demands[best_route_id][stop] = temp_route_stop_demands[best_route_id].get(stop, 0) + stop_route_demand
                     temp_route_demands[best_route_id] += stop_route_demand
                     
-                    # Log each merge operation
                     logger.log_merge_operation(
                         remove_route_id,
                         best_route_id,
@@ -203,7 +186,6 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
                 route_demands = temp_route_demands
                 route_stop_demands = temp_route_stop_demands
                 
-                # Log route removal
                 logger.log_route_removal(remove_route_id, stops_assigned)
                 
                 del alive_routes[remove_route_id]
@@ -217,7 +199,6 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
         if not route_removed:
             break
     
-    # If no routes could be removed, revert to the original routes
     if not any_route_removed:
         print("No routes could be merged. Reverting to original routes.")
         alive_routes = original_routes
@@ -227,7 +208,6 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
             for route_id, demands in original_route_stop_demands.items()
         }
     
-    # Log final state with proper demand calculation
     logger.log_final_state(alive_routes, {
         route_id: sum(demands.values())
         for route_id, demands in route_stop_demands.items()

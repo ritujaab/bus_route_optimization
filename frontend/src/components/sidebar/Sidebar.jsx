@@ -14,7 +14,7 @@ function Sidebar({
   onBusSelect 
 }) {
   const [activeTab, setActiveTab] = useState('buses'); // Only 'buses' tab remains
-  const [showFilters, setShowFilters] = useState(true); // State to toggle filters
+  const [showFilters, setShowFilters] = useState(false); // State to toggle filters
 
   return (
     <div className="w-96 bg-white shadow-lg overflow-hidden flex flex-col border-r border-gray-200">
@@ -70,6 +70,45 @@ function Sidebar({
             {showFilters && (
               <Filters filters={filters} onFilterChange={onFilterChange} onClearFilters={onClearFilters}/>
             )}
+
+            {/* Additional Parameters */}
+            {showFilters && (
+              <div className="px-4 py-2 space-y-2">
+                <label className="block text-sm font-medium text-gray-700">Max Capacity</label>
+                <input
+                  type="number"
+                  className="w-full border rounded px-3 py-1"
+                  value={filters.maxCapacity || ''}
+                  onChange={(e) => onFilterChange({ ...filters, maxCapacity: Number(e.target.value) })}
+                />
+
+                <label className="block text-sm font-medium text-gray-700">Distance Threshold (km)</label>
+                <input
+                  type="number"
+                  className="w-full border rounded px-3 py-1"
+                  value={filters.distanceThreshold || ''}
+                  onChange={(e) => onFilterChange({ ...filters, distanceThreshold: Number(e.target.value) })}
+                />
+
+                <label className="block text-sm font-medium text-gray-700">Demand Ignore Threshold</label>
+                <input
+                  type="number"
+                  className="w-full border rounded px-3 py-1"
+                  value={filters.demandIgnoreThreshold || ''}
+                  onChange={(e) => onFilterChange({ ...filters, demandIgnoreThreshold: Number(e.target.value) })}
+                />
+
+                <label className="block text-sm font-medium text-gray-700">Max Demand Sum (Far Stops)</label>
+                <input
+                  type="number"
+                  className="w-full border rounded px-3 py-1"
+                  value={filters.maxDemandSumForFarStops || ''}
+                  onChange={(e) => onFilterChange({ ...filters, maxDemandSumForFarStops: Number(e.target.value) })}
+                />
+              </div>
+            )}
+              
+            {/* Clear Filters Button */}
             {/* Bus List */}
             <BusList 
               buses={buses} 

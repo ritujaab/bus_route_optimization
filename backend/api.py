@@ -59,11 +59,17 @@ def get_all_routes():
 def merge_routes_api():
     try:
         # Get the filters from the request JSON data
-        filters = request.get_json()
+        data = request.get_json()
+        print("Received data:", data)
 
+        filters = data.get("Filters", {})
+        constraints = data.get("Constraints", {})
+
+        print("Filters:", filters)
+        print("Constraints:", constraints)
         # Merge the selected route groups using the provided filters
         # Note: `filters` is passed into the merge function, as required in main.py
-        merged_routes, logs = merge(filters)
+        merged_routes, logs = merge(filters, constraints)
 
         # Return the result in a structured JSON response
         return jsonify({

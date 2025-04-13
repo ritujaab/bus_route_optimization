@@ -25,23 +25,29 @@ function Filters({ filters, onFilterChange, onClearFilters }) {
 
   const handleSubmit = async () => {
     setLoading(true);
-
-    const payload = {};
-
+  
+    const payload = {'Filters':{}, 'Constraints':{}};
+  
     const ssnData = [];
     Object.entries(filters.ssnYears).forEach(([_, value], idx) => {
       if (value) ssnData.push(idx + 1);
     });
     if (filters.ssnFaculty) ssnData.push("Faculty");
-    if (ssnData.length > 0) payload["SSN"] = ssnData;
-
+    if (ssnData.length > 0) payload['Filters']["SSN"] = ssnData;
+  
     const snuData = [];
     Object.entries(filters.snuYears).forEach(([_, value], idx) => {
       if (value) snuData.push(idx + 1);
     });
     if (filters.snuFaculty) snuData.push("Faculty");
-    if (snuData.length > 0) payload["SNU"] = snuData;
-
+    if (snuData.length > 0) payload['Filters']["SNU"] = snuData;
+  
+    // ✅ Add constraints to payload
+    if (filters.maxCapacity) payload['Constraints']["MAX_CAPACITY"] = filters.maxCapacity;
+    if (filters.distanceThreshold) payload['Constraints']["DISTANCE_THRESHOLD"] = filters.distanceThreshold;
+    if (filters.demandIgnoreThreshold) payload['Constraints']["DEMAND_IGNORE_THRESHOLD"] = filters.demandIgnoreThreshold;
+    if (filters.maxDemandSumForFarStops) payload['Constraints']["MAX_DEMAND_SUM_FOR_FAR_STOPS"] = filters.maxDemandSumForFarStops;
+  
     try {
       console.log("Sending payload:", payload);
       const response = await axios.post('http://localhost:5000/api/merge_routes', payload);
@@ -49,10 +55,10 @@ function Filters({ filters, onFilterChange, onClearFilters }) {
     } catch (error) {
       console.error('Error during merge:', error);
     }
-
+  
     setLoading(false);
   };
-
+  
   const handleClearClick = () => {
     onClearFilters();  // Calls parent function
   };  
@@ -114,6 +120,40 @@ function Filters({ filters, onFilterChange, onClearFilters }) {
           </label>
         </div>
       </div>
+
+      <div className="px-4 py-2 space-y-2">
+      <label className="block text-sm font-medium text-gray-700">Max Capacity</label>
+      <input
+        type="number"
+        className="w-full border rounded px-3 py-1"
+        value={filters.maxCapacity || ''}
+        onChange={(e) => onFilterChange({ ...filters, maxCapacity: Number(e.target.value) })}
+      />
+
+      <label className="block text-sm font-medium text-gray-700">Distance Threshold (km)</label>
+      <input
+        type="number"
+        className="w-full border rounded px-3 py-1"
+        value={filters.distanceThreshold || ''}
+        onChange={(e) => onFilterChange({ ...filters, distanceThreshold: Number(e.target.value) })}
+      />
+
+      <label className="block text-sm font-medium text-gray-700">Demand Ignore Threshold</label>
+      <input
+        type="number"
+        className="w-full border rounded px-3 py-1"
+        value={filters.demandIgnoreThreshold || ''}
+        onChange={(e) => onFilterChange({ ...filters, demandIgnoreThreshold: Number(e.target.value) })}
+      />
+
+      <label className="block text-sm font-medium text-gray-700">Max Demand Sum (Far Stops)</label>
+      <input
+        type="number"
+        className="w-full border rounded px-3 py-1"
+        value={filters.maxDemandSumForFarStops || ''}
+        onChange={(e) => onFilterChange({ ...filters, maxDemandSumForFarStops: Number(e.target.value) })}
+      />
+    </div>
 
       {/* Buttons */}
       <div className="flex flex-col gap-2">

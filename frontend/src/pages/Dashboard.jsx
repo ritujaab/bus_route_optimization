@@ -13,7 +13,12 @@ function Dashboard() {
     snuYears: { year1: false, year2: false, year3: false, year4: false },
     ssnFaculty: false,
     snuFaculty: false,
+    maxCapacity: 60,
+    distanceThreshold: 3,
+    demandIgnoreThreshold: 1,
+    maxDemandSumForFarStops: 2
   });
+  
 
   const [routeData, setRouteData] = useState([]);
 
@@ -79,7 +84,11 @@ function Dashboard() {
       snuYears: { year1: false, year2: false, year3: false, year4: false },
       ssnFaculty: false,
       snuFaculty: false,
-    };
+      maxCapacity: 60,
+      distanceThreshold: 3,
+      demandIgnoreThreshold: 1,
+      maxDemandSumForFarStops: 2
+    };    
     setFilters(defaultFilters);
   };
 

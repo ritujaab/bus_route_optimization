@@ -102,7 +102,7 @@ def save_overall_statistics(all_logs):
     print(f"Total merge operations: {total_merge_ops}")
     print(f"Route reduction: {total_removed_routes} ({(total_removed_routes / total_initial_routes * 100):.2f}%)")
 
-def merge(filters):
+def merge(filters, constraints):
     excel_file = 'cleaned_file.xlsx'
     selected_routes_groups = [
         ['1', '7', '9a', '9b', '18'],
@@ -139,7 +139,8 @@ def merge(filters):
             distance_matrix=inputs['distance_matrix'],
             college_stop=inputs['college_stop'],
             route_stop_demands=inputs['route_stop_demands'],
-            faculty_stops=inputs['faculty_stops']
+            faculty_stops=inputs['faculty_stops'],
+            constraints=constraints
         )
         
         # Print the detailed summary for this group

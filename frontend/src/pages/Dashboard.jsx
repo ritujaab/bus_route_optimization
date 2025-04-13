@@ -102,6 +102,7 @@ function Dashboard() {
           selectedBuses={selectedBuses}
           onBusSelect={handleBusSelect}
         />
+        {console.log("Filtered buses:", getFilteredBuses())}
         <div className="flex-1 overflow-auto">
           <MapView
             busRoutes={getFilteredBuses()}

@@ -26,7 +26,7 @@ async function fetchRoadPath(startPoint, endPoint) {
 function getRouteColor(routeName) {
   // Extract the route number if possible
   const routeNumber = parseInt(routeName.replace(/\D/g, ''));
-  
+
   // List of distinct colors for routes
   const colors = [
     '#4285F4', // Blue
@@ -46,45 +46,16 @@ function getRouteColor(routeName) {
     '#FF9800', // Orange
     '#FF5722'  // Deep Orange
   ];
-  
+
   return colors[routeNumber % colors.length] || colors[0];
 }
 
-export default function MapView() {
-  const [routes, setRoutes] = useState({});
+export default function MapView({ busRoutes }) {
+  console.log("Bus Routes:", busRoutes);
+
   const [stops, setStops] = useState({});
   const [roadPaths, setRoadPaths] = useState({});
-  const [selectedRoutes, setSelectedRoutes] = useState([]);
-  const [stopToRouteMap, setStopToRouteMap] = useState({});
-
-  // Fetch all route files
-  useEffect(() => {
-    const fetchRoutes = async () => {
-      try {
-        const res = await fetch("http://localhost:5000/api/all_routes");
-        const data = await res.json();
-        setRoutes(data);
-        setSelectedRoutes(Object.keys(data)); // Select all initially
-        
-        // Create a mapping of stops to routes they belong to
-        const stopMapping = {};
-        Object.entries(data).forEach(([routeName, stops]) => {
-          stops.forEach(stop => {
-            const normStop = normalize(stop);
-            if (!stopMapping[normStop]) {
-              stopMapping[normStop] = [];
-            }
-            stopMapping[normStop].push(routeName);
-          });
-        });
-        setStopToRouteMap(stopMapping);
-      } catch (err) {
-        console.error("Failed to load route data:", err);
-      }
-    };
-
-    fetchRoutes();
-  }, []);
+  const [selectedRoutes, setSelectedRoutes] = useState(Object.keys(busRoutes));
 
   // Fetch stop coordinates
   useEffect(() => {
@@ -107,8 +78,8 @@ export default function MapView() {
       const paths = {};
 
       for (const routeName of selectedRoutes) {
-        if (!routes[routeName]) continue; // Guard
-        const stopList = routes[routeName];
+        if (!busRoutes[routeName]) continue; // Guard
+        const stopList = busRoutes[routeName];
         const coords = stopList
           .map(stop => stops[normalize(stop)])
           .filter(Boolean);
@@ -126,9 +97,9 @@ export default function MapView() {
     };
 
     fetchAllRoadPaths();
-  }, [selectedRoutes, stops, routes]);
+  }, [selectedRoutes, stops, busRoutes]);
 
-  const allRouteNames = Object.keys(routes);
+  const allRouteNames = Object.keys(busRoutes);
 
   return (
     <div style={{ display: 'flex' }}>
@@ -173,7 +144,7 @@ export default function MapView() {
                       backgroundColor: color, 
                       marginLeft: '8px',
                       marginRight: '8px',
-                      borderRadius: '50%'
+                      borderRadius: '50%' 
                     }} 
                   />
                   <span>{route}</span>
@@ -189,7 +160,7 @@ export default function MapView() {
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
           {selectedRoutes.map(routeName => {
-            const stopList = routes[routeName];
+            const stopList = busRoutes[routeName];
             const coords = stopList
               .map(stop => stops[normalize(stop)])
               .filter(Boolean);
@@ -220,35 +191,16 @@ export default function MapView() {
           {/* Render markers for all stops of selected routes */}
           {Object.entries(stops).map(([stopKey, coords]) => {
             // Find what routes this stop belongs to
-            const routesForStop = stopToRouteMap[stopKey] || [];
-            
-            // Only show stops that are part of selected routes
-            const relevantRoutes = routesForStop.filter(r => selectedRoutes.includes(r));
-            if (relevantRoutes.length === 0) return null;
-            
-            // Find the original stop name (non-normalized)
-            let originalStopName = stopKey;
-            for (const routeName of relevantRoutes) {
-              const routeStops = routes[routeName] || [];
-              const matchingStop = routeStops.find(s => normalize(s) === stopKey);
-              if (matchingStop) {
-                originalStopName = matchingStop;
-                break;
-              }
-            }
+            const routesForStop = Object.keys(busRoutes).filter(route => busRoutes[route].includes(stopKey));
+            if (!routesForStop.some(route => selectedRoutes.includes(route))) return null;
             
             return (
               <Marker key={`marker-${stopKey}`} position={coords}>
                 <Popup>
-                  <strong>{originalStopName}</strong>
+                  <strong>{stopKey}</strong>
                   <div style={{ marginTop: '5px' }}>
                     <strong>Routes: </strong>
-                    {relevantRoutes.map((route, idx) => (
-                      <span key={route}>
-                        {route}
-                        {idx < relevantRoutes.length - 1 ? ', ' : ''}
-                      </span>
-                    ))}
+                    {routesForStop.join(', ')}
                   </div>
                 </Popup>
               </Marker>

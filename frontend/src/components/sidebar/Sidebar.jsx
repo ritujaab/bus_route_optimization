@@ -7,7 +7,8 @@ function Sidebar({
   scheduleType, 
   onScheduleTypeChange, 
   filters, 
-  onFilterChange, 
+  onFilterChange,
+  onClearFilters,
   buses, 
   selectedBuses, 
   onBusSelect 
@@ -18,7 +19,6 @@ function Sidebar({
   return (
     <div className="w-96 bg-white shadow-lg overflow-hidden flex flex-col border-r border-gray-200">
       <div className="p-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-700">Route Settings</h2>
         
         {/* Schedule Type Toggle */}
         <div className="mt-4">
@@ -68,7 +68,7 @@ function Sidebar({
 
             {/* Filters (conditionally rendered) */}
             {showFilters && (
-              <Filters filters={filters} onFilterChange={onFilterChange} />
+              <Filters filters={filters} onFilterChange={onFilterChange} onClearFilters={onClearFilters}/>
             )}
             {/* Bus List */}
             <BusList 

@@ -11,7 +11,6 @@ function BusList({ buses, selectedBuses, onBusSelect }) {
         <ul className="space-y-2">
           {buses.map(bus => (
             <li key={bus.busNumber}>
-            {console.log(bus.stops)}
               <button
                 className={`w-full text-left px-3 py-2 rounded-md ${
                   selectedBuses.includes(bus.busNumber)
@@ -20,10 +19,10 @@ function BusList({ buses, selectedBuses, onBusSelect }) {
                 }`}
                 onClick={() => onBusSelect(bus.busNumber)}
               >
-                <div className="font-medium">{bus.busNumber}</div>
-                {bus.path && (
+                <div className="font-medium">Bur Route {bus.busNumber}</div>
+                {bus.routePath && (
                   <div className="mt-1 text-sm text-gray-600">
-                    {bus.stops.join(' → ')}
+                    {bus.routePath.join(' → ')}
                   </div>
                 )}
               </button>

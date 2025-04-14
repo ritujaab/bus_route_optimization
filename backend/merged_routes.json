@@ -16,9 +16,12 @@
     "Jeyachandra Pallikaranai",
     "Global BS",
     "Shoilg BS",
+<<<<<<< HEAD
+=======
     "Navallur Cognizant",
     "TVH Apt.",
     "Padur Roundana",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     "College"
   ],
   "11": [
@@ -117,9 +120,11 @@
     "Virugambakkam",
     "KK Nagar Pondy GH",
     " KK Nagar Roundana",
+    "Double Tank",
     "PSBB School",
     "KK Nagar depot",
     "ESI Hospital",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     "Government Boys School",
     " College"
   ],
@@ -144,9 +149,10 @@
     "Vadapalani Depot",
     "Vadapalani Signal",
     "Ashok Nagar Canara Bank",
+    "Postal Colony",
     "Ashok Nagar",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     "Govindan Road",
-    "Srinivasa theatre",
     "Srinivasa theatre",
     "Aranganathan Subway",
     "Saidapet Court",
@@ -168,6 +174,20 @@
     "Pudupakkam",
     "College"
   ],
+<<<<<<< HEAD
+  "25": [
+    "Chepauk Stadium (Bells road BS)",
+    "Pycrofts Road",
+    "Rathna Cafe",
+    "Triplicane",
+    "Light House",
+    "Jayanthi Theatre",
+    "College",
+    "Indira Nagar CPWD",
+    "Ambikka Appalam"
+  ],
+=======
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
   "26": [
     "Ponniamman Koil",
     "Balaiah Garden",
@@ -183,9 +203,10 @@
     "Thoraipakkam Flyover",
     "Perungudi Flyover",
     "PTC Qtrs BS",
+<<<<<<< HEAD
+=======
     "Okkiam Pettai BS",
     "Karapakkam Temple",
-    "Kumaran Nagar",
     "Olympia(opp to AGS)",
     "Sipcot BS",
     "Victoria Apt. Kazhipatur",
@@ -205,6 +226,18 @@
     "Kalavakkam",
     "College"
   ],
+  "29": [
+    "Anagaputhur BS",
+    "Amman Koil",
+    "Pammal",
+    "Church",
+    "Krishna Nagar BS",
+    "Pillaiyar Koil",
+    "Pallavaram",
+    "Ponds",
+    "MIT",
+    "College"
+  ],
   "3": [
     "Peravallur BS",
     "Venus (Gandhi Statue)",
@@ -219,7 +252,10 @@
     "Adambakkam Metro",
     "Rani Kalyanamandapam",
     "Echankadu Signal",
+<<<<<<< HEAD
+=======
     "Kovilambakkam BS",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     "College"
   ],
   "32": [
@@ -233,6 +269,7 @@
   ],
   "33": [
     "Devi Karumariamman Temple",
+    "Vellakal",
     "navin flats",
     "Medavakkam Panchayat Office",
     "Sri Sai Baba Temple",
@@ -246,7 +283,12 @@
     "ngo colony",
     "Sree Balaji Dental College & Hospital",
     "SBIOA International School",
+<<<<<<< HEAD
+=======
     "Kelambakkam (opp.police station)",
+    "Chenganmal BS",
+    "Vijayashanthi Apt",
+    "Koman Nagar",
     "College"
   ],
   "36": [
@@ -255,13 +297,6 @@
     "TB Hospital",
     "Erimbuliyur",
     "Vandalur Rly.Gate",
-    "College"
-  ],
-  "37": [
-    "Ambikka Appalam",
-    "United India",
-    "Nalli",
-    "Indira Nagar CPWD",
     "College"
   ],
   "39": [
@@ -274,18 +309,22 @@
     "Tansi Nagar",
     "Baby Nagar",
     "Taramani Church",
+    "Kumaran Nagar",
+    "Sipcot BS",
+    "Victoria Apt. Kazhipatur",
     "Opp to Chetinnad",
-    "Vijayashanthi Apt",
+    "Kelambakkam(opp.TMB)",
     "College"
   ],
   "4": [
     "Porur (Kumar Sweets)",
     "Saravana stores (shell PB)",
+<<<<<<< HEAD
+=======
     "Anagaputhur BS",
     "Pammal",
     "Krishna Nagar BS",
     "Pillaiyar Koil",
-    "MIT",
     "College"
   ],
   "40": [
@@ -304,17 +343,33 @@
     "Selaiyur PS",
     " Camp Road (junction point)",
     "Rajakilpakkam (bus stop)",
+<<<<<<< HEAD
+    "Medavakkam Koot Road (BS)",
+=======
     "Sembakkam BS",
     "Medavakkam Koot Road (BS)",
     "Medavakkam Koot Road (BS)",
+    "Puthukoil (Shri Puthu Kovil)",
     "College"
   ],
   "42": [
     "Devaraj Nagar(Bharath Engg)",
     "Indira Nagar(bs)",
     "Mahalakshmi Nagar(BS)",
+<<<<<<< HEAD
+=======
     "Kamarajapuram BS",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     "Vijayanagaram (BS)",
+    "College"
+  ],
+  "42a": [
+    "Kamarajapuram BS",
+    "Sembakkam BS",
+    "Gowrivakkam (BS)",
+    "Santhosapuram (BS)",
+    "Puthukoil (Shri Puthu Kovil)",
+    "Medavakkam Koot Road (BS)",
     "College"
   ],
   "43": [
@@ -334,46 +389,75 @@
   "4a": [
     "Mugalaivakkam BS",
     "Ramapuram BS",
-    "Pallavaram",
     "Sanitorium (GK Hotel)",
     "Perungalathur",
     "College"
   ],
   "5": [
     "Beach Station",
+<<<<<<< HEAD
+=======
     "Chepauk Stadium (Bells road BS)",
     "Triplicane",
     "Ajantha",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     "Valluvar Statue",
     "LUZ Corner",
     "MGR Janaki College",
     "Adyar Depot(T.Exchange)",
     "Thiruvanmiyur Post office",
+<<<<<<< HEAD
+    "College"
+=======
     "College",
     "Peria Neelankarai (vasan eye care)",
     "RTO Office",
     "Aavin (opp Malar H)"
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
   ],
   "6": [
     "Beach Station",
     "V.House",
-    "Light House",
     "F.Shore Estate",
     "MRC Nagar",
     "College",
+<<<<<<< HEAD
+    "Thiruvanmiyur TMB Bank",
+    "Vannandurai",
+    "Besant Nagar",
+    "Aavin (opp Malar H)"
+=======
     "Vettuvankani (Church)",
     "Thiruvanmiyur TMB Bank",
     "Vannandurai",
     "Besant Nagar"
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
   ],
   "7": [
     "Wavin",
     "Ambattur Estate",
     "Decathlon",
+<<<<<<< HEAD
+=======
     "Maduravoyal Erikarai",
     "Kolapakkam",
     "Kandigai",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     "College"
+  ],
+  "8": [
+    "P1 Police Station (pulianthope)",
+    "Nataraja Theatre",
+    "Choolai PO",
+    "Chindadripet Ramada Hotel",
+    "Royapettah BS TTK Road",
+    "Alwarpet (Winners Bakery)",
+    "Marutheeswarar Temple",
+    "RTO Office",
+    "Peria Neelankarai (vasan eye care)",
+    "College",
+    "Indira Nagar CPWD",
+    "Ambikka Appalam"
   ],
   "9": [
     "Korattur (Millinium Aprts.)",
@@ -389,6 +473,12 @@
     "Golden Flats BS",
     "TSK Nagar",
     "Collector Nagar",
+    "College"
+  ],
+  "9b": [
+    "Maduravoyal Erikarai",
+    "Kolapakkam",
+    "Kandigai",
     "College"
   ]
 }

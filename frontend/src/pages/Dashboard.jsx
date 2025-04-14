@@ -36,6 +36,7 @@ function Dashboard() {
     if (isFilterApplied()) {
       try {
         const response = await axios.get("http://localhost:5000/api/get_routes");
+        console.log(response.data)
         const formatted = Object.entries(response.data).map(([busNumber, path]) => ({
           busNumber,
           routePath: path,
@@ -138,14 +139,16 @@ function Dashboard() {
           </div>
         </div>
       </div>
-
+      
       {/* Bottom Section: MapView */}
+      {/*
       <div className="px-6 pt-4 pb-10">
         <h2 className="text-2xl font-semibold mb-4">Map Visualization</h2>
         <div className="h-[500px] border-t border-gray-300 rounded-lg shadow-md">
           <MapView busRoutes={getFilteredBuses()} />
         </div>
       </div>
+      */}
     </div>
   );
 }

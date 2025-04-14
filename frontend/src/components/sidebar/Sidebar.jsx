@@ -7,6 +7,7 @@ function Sidebar({
   filters, 
   onFilterChange,
   onClearFilters,
+  handleFilterSubmit,
 }) {
   return (
     <div className="w-[500px] bg-white shadow-lg overflow-y-auto flex flex-col border-r border-gray-200">
@@ -31,7 +32,7 @@ function Sidebar({
       </div>
       
       <div className="flex-1 overflow-y-auto">
-        <Filters filters={filters} onFilterChange={onFilterChange} onClearFilters={onClearFilters} />
+        <Filters filters={filters} onFilterChange={onFilterChange} onClearFilters={onClearFilters} handleSubmit={handleFilterSubmit}/>
       </div>
     </div>
   );

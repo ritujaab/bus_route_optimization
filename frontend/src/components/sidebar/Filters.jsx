@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-function Filters({ filters, onFilterChange, onClearFilters }) {
-  const [loading, setLoading] = useState(false);
+function Filters({ filters, onFilterChange, onClearFilters, handleSubmit }) {
 
   const handleYearToggle = (university, year) => {
     const key = university === 'ssn' ? 'ssnYears' : 'snuYears';
@@ -21,42 +20,6 @@ function Filters({ filters, onFilterChange, onClearFilters }) {
       ...filters,
       [key]: !filters[key],
     });
-  };
-
-  const handleSubmit = async () => {
-    setLoading(true);
-  
-    const payload = {'Filters':{}, 'Constraints':{}};
-  
-    const ssnData = [];
-    Object.entries(filters.ssnYears).forEach(([_, value], idx) => {
-      if (value) ssnData.push(idx + 1);
-    });
-    if (filters.ssnFaculty) ssnData.push("Faculty");
-    if (ssnData.length > 0) payload['Filters']["SSN"] = ssnData;
-  
-    const snuData = [];
-    Object.entries(filters.snuYears).forEach(([_, value], idx) => {
-      if (value) snuData.push(idx + 1);
-    });
-    if (filters.snuFaculty) snuData.push("Faculty");
-    if (snuData.length > 0) payload['Filters']["SNU"] = snuData;
-  
-    // ✅ Add constraints to payload
-    if (filters.maxCapacity) payload['Constraints']["MAX_CAPACITY"] = filters.maxCapacity;
-    if (filters.distanceThreshold) payload['Constraints']["DISTANCE_THRESHOLD"] = filters.distanceThreshold;
-    if (filters.demandIgnoreThreshold) payload['Constraints']["DEMAND_IGNORE_THRESHOLD"] = filters.demandIgnoreThreshold;
-    if (filters.maxDemandSumForFarStops) payload['Constraints']["MAX_DEMAND_SUM_FOR_FAR_STOPS"] = filters.maxDemandSumForFarStops;
-  
-    try {
-      console.log("Sending payload:", payload);
-      const response = await axios.post('http://localhost:5000/api/merge_routes', payload);
-      console.log('Merge successful:', response.data);
-    } catch (error) {
-      console.error('Error during merge:', error);
-    }
-  
-    setLoading(false);
   };
   
   const handleClearClick = () => {
@@ -205,35 +168,8 @@ function Filters({ filters, onFilterChange, onClearFilters }) {
         <button
           className="w-full py-2 bg-indigo-600 text-white rounded-md flex items-center justify-center"
           onClick={handleSubmit}
-          disabled={loading}
         >
-          {loading ? (
-            <>
-              <svg
-                className="animate-spin h-5 w-5 mr-2 text-white"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                />
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                />
-              </svg>
-              Applying...
-            </>
-          ) : (
-            'Apply Filters'
-          )}
+        Apply Filters
         </button>
 
         <button

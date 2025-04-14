@@ -16,10 +16,24 @@
     "Jeyachandra Pallikaranai",
     "Global BS",
     "Shoilg BS",
-    "Sipcot BS",
-    "Victoria Apt. Kazhipatur",
+    "Navallur Cognizant",
     "TVH Apt.",
-    "Vijayashanthi Apt",
+    "Padur Roundana",
+    "College"
+  ],
+  "11": [
+    "perambur market ",
+    "Perambur BS",
+    "Perambur RS",
+    "Jamalia ",
+    "kovil",
+    "Dhasprakash",
+    "Egmore stadium",
+    "Anna Arivalayam",
+    "SIET College",
+    "IITM",
+    "Palavakkam(opp.Govt school)",
+    "kanathur",
     "College"
   ],
   "12": [
@@ -81,8 +95,6 @@
     "Natesan Nagar",
     "Elango Nagar",
     "Avichi School",
-    "Avichi School",
-    "Vadapalani Depot",
     "Ram Theatre",
     "Liberty",
     "Kodambakkam Bridge",
@@ -107,8 +119,7 @@
     " KK Nagar Roundana",
     "PSBB School",
     "KK Nagar depot",
-    "Srinivasa theatre",
-    "Srinivasa theatre",
+    "ESI Hospital",
     "Government Boys School",
     " College"
   ],
@@ -127,6 +138,21 @@
     "Mambakkam",
     "College"
   ],
+  "21": [
+    "Avichi School",
+    "Sooriya Hospital",
+    "Vadapalani Depot",
+    "Vadapalani Signal",
+    "Ashok Nagar Canara Bank",
+    "Ashok Nagar",
+    "Govindan Road",
+    "Srinivasa theatre",
+    "Srinivasa theatre",
+    "Aranganathan Subway",
+    "Saidapet Court",
+    "McDonald's Velachery",
+    "College"
+  ],
   "24": [
     "Power House (Kodambakkam)",
     "Liberty Meenakshi College",
@@ -139,7 +165,6 @@
     "Saidapet Metro",
     "Kalainjar Arch",
     "Saidapet Court",
-    "McDonald's Velachery",
     "Pudupakkam",
     "College"
   ],
@@ -155,10 +180,6 @@
     "Mandaveli Rly St",
     "Sangeetha",
     "Mettukuppam Flyover",
-    "Prasanth Hospital",
-    "Vijayanagar",
-    "Tansi Nagar",
-    "Taramani Church",
     "Thoraipakkam Flyover",
     "Perungudi Flyover",
     "PTC Qtrs BS",
@@ -166,6 +187,9 @@
     "Karapakkam Temple",
     "Kumaran Nagar",
     "Olympia(opp to AGS)",
+    "Sipcot BS",
+    "Victoria Apt. Kazhipatur",
+    "Kelambakkam(opp.TMB)",
     "College"
   ],
   "28": [
@@ -187,9 +211,15 @@
     "Perambur Rly St.",
     "Jamalia",
     "Ottery",
-    "kovil",
-    "IITM",
-    "Palavakkam(opp.Govt school)",
+    "College"
+  ],
+  "31": [
+    "Independence Day Park",
+    "Hotel Saravana Square",
+    "Adambakkam Metro",
+    "Rani Kalyanamandapam",
+    "Echankadu Signal",
+    "Kovilambakkam BS",
     "College"
   ],
   "32": [
@@ -203,12 +233,7 @@
   ],
   "33": [
     "Devi Karumariamman Temple",
-    "Adambakkam Metro",
-    "Independence Day Park",
-    "Hotel Saravana Square",
-    "Rani Kalyanamandapam",
-    "Echankadu Signal",
-    "Kovilambakkam BS",
+    "navin flats",
     "Medavakkam Panchayat Office",
     "Sri Sai Baba Temple",
     "Sithalapakkam Jn",
@@ -230,6 +255,27 @@
     "TB Hospital",
     "Erimbuliyur",
     "Vandalur Rly.Gate",
+    "College"
+  ],
+  "37": [
+    "Ambikka Appalam",
+    "United India",
+    "Nalli",
+    "Indira Nagar CPWD",
+    "College"
+  ],
+  "39": [
+    "Guindy RS",
+    " Gurunanak College",
+    "Gandhi Rd.Jn",
+    "Dandeeswaran",
+    "Prasanth Hospital",
+    "Vijayanagar",
+    "Tansi Nagar",
+    "Baby Nagar",
+    "Taramani Church",
+    "Opp to Chetinnad",
+    "Vijayashanthi Apt",
     "College"
   ],
   "4": [
@@ -297,17 +343,15 @@
     "Beach Station",
     "Chepauk Stadium (Bells road BS)",
     "Triplicane",
+    "Ajantha",
     "Valluvar Statue",
     "LUZ Corner",
     "MGR Janaki College",
     "Adyar Depot(T.Exchange)",
     "Thiruvanmiyur Post office",
     "College",
-    "Vettuvankani (Church)",
     "Peria Neelankarai (vasan eye care)",
     "RTO Office",
-    "Vannandurai",
-    "Besant Nagar",
     "Aavin (opp Malar H)"
   ],
   "6": [
@@ -317,8 +361,10 @@
     "F.Shore Estate",
     "MRC Nagar",
     "College",
-    "Indira Nagar CPWD",
-    "Ambikka Appalam"
+    "Vettuvankani (Church)",
+    "Thiruvanmiyur TMB Bank",
+    "Vannandurai",
+    "Besant Nagar"
   ],
   "7": [
     "Wavin",
@@ -326,6 +372,7 @@
     "Decathlon",
     "Maduravoyal Erikarai",
     "Kolapakkam",
+    "Kandigai",
     "College"
   ],
   "9": [

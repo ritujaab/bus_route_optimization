@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { busRoutePaths as defaultBusRoutePaths } from '../../data/extracted_data';
 import { FaBus, FaTimesCircle, FaPlusCircle, FaExchangeAlt } from 'react-icons/fa';
 
-function Analytics({ busRoutes }) {
+function Analytics({ busRoutes,logs}) {
   const [analytics, setAnalytics] = useState({
     removedBuses: [],
     movedStops: [],
@@ -76,6 +76,36 @@ function Analytics({ busRoutes }) {
 
   return (
     <div className="p-6 text-gray-800">
+    {logs && logs.length > 0 && (() => {
+      let total_initial_routes = 0;
+      let total_removed_routes = 0;
+      let total_final_routes = 0;
+      let total_merge_ops = 0;
+
+      logs.forEach(log => {
+        total_initial_routes += log.initial_routes ? Object.keys(log.initial_routes).length : 0;
+        total_removed_routes += Array.isArray(log.removed_routes) ? log.removed_routes.length : 0;
+        total_final_routes += log.final_routes ? Object.keys(log.final_routes).length : 0;
+        total_merge_ops += Array.isArray(log.merge_operations) ? log.merge_operations.length : 0;
+      });
+
+      const route_reduction_percentage = total_initial_routes > 0
+        ? ((total_removed_routes / total_initial_routes) * 100).toFixed(2)
+        : "0.00";
+
+      return (
+        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h2 className="text-lg font-semibold text-blue-900 mb-2">Overall Statistics</h2>
+          <ul className="text-sm text-blue-800 list-disc pl-5 space-y-1">
+            <li>Total initial routes: {total_initial_routes}</li>
+            <li>Total removed routes: {total_removed_routes}</li>
+            <li>Total final routes: {total_final_routes}</li>
+            <li>Total merge operations: {total_merge_ops}</li>
+            <li>Route reduction: {total_removed_routes} ({route_reduction_percentage}%)</li>
+          </ul>
+        </div>
+      );
+    })()}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {/* Removed Buses Card */}

@@ -28,6 +28,7 @@ function Dashboard() {
   });
 
   const [routeData, setRouteData] = useState([]);
+  const [logData, setLogData] = useState({});
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -58,7 +59,13 @@ function Dashboard() {
 
     try {
       console.log('Sending payload:', payload);
-      await axios.post('http://localhost:5000/api/merge_routes', payload);
+      const response = await axios.post('http://localhost:5000/api/merge_routes', payload);
+      console.log('Response from merge_routes:', response.data);
+      if (response.data.logs) {
+        setLogData(response.data.logs);
+      } else {
+        console.warn('No logs found in response data');
+      }
       fetchRoutes();
     } catch (error) {
       console.error('Error during merge:', error);
@@ -188,14 +195,15 @@ function Dashboard() {
                 filters={filters}
               />
             ) : (
-              <Analytics busRoutes={getFilteredBuses()} />
+              <Analytics 
+                busRoutes={getFilteredBuses()} 
+                logs={logData}
+              />
             )}
           </div>
         </div>
       </div>
 
-      {/* Optional Map Section */}
-      
       <div className="px-6 pt-4 pb-10">
         <h2 className="text-2xl font-semibold mb-4">Map Visualization</h2>
         <div className="h-[500px] border-t border-gray-300 rounded-lg shadow-md">

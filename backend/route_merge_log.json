@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-04-14T14:40:46.618423",
+=======
+  "timestamp": "2025-04-14T14:18:32.831549",
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
   "initial_routes": {
     "9": {
       "stops": [
@@ -11,6 +15,7 @@
         "Ration Kadai",
         "College"
       ],
+<<<<<<< HEAD
       "total_demand": 55,
       "stop_demands": {
         "Annanagar W.Depot": 17,
@@ -20,6 +25,16 @@
         "Nerkundram": 13,
         "Ration Kadai": 4,
         "TVS BS": 9
+=======
+      "total_demand": 37,
+      "stop_demands": {
+        "Annanagar W.Depot": 10,
+        "Korattur (Millinium Aprts.)": 9,
+        "Korattur Signal": 1,
+        "Nerkundram": 9,
+        "Ration Kadai": 2,
+        "TVS BS": 6
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
       }
     }
   },
@@ -36,7 +51,11 @@
         "Ration Kadai",
         "College"
       ],
+<<<<<<< HEAD
       "total_demand": 55
+=======
+      "total_demand": 37
+>>>>>>> b4f7f342cba147e17a58c3250c8d1e21b3552d10
     }
   },
   "demand_changes": []

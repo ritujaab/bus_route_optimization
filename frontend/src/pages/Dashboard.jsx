@@ -95,7 +95,7 @@ function Dashboard() {
 
       <div className="flex h-[900px]">
         {/* Sidebar */}
-        <div className="w-96 bg-white shadow-lg border-r border-gray-200 overflow-y-auto">
+        <div className="bg-white shadow-lg border-r border-gray-200 overflow-y-auto">
           <Sidebar
             scheduleType={scheduleType}
             onScheduleTypeChange={setScheduleType}
@@ -133,7 +133,7 @@ function Dashboard() {
                 filters={filters}
               />
             ) : (
-              <Analytics />
+              <Analytics busRoutes={getFilteredBuses()}/>
             )}
           </div>
         </div>

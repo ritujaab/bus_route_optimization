@@ -24,6 +24,7 @@ function Dashboard() {
     distanceThreshold: 3,
     demandIgnoreThreshold: 1,
     maxDemandSumForFarStops: 2,
+    minCloserThreshold: 0.5,
   });
 
   const [routeData, setRouteData] = useState([]);
@@ -52,6 +53,7 @@ function Dashboard() {
       DISTANCE_THRESHOLD: filters.distanceThreshold,
       DEMAND_IGNORE_THRESHOLD: filters.demandIgnoreThreshold,
       MAX_DEMAND_SUM_FOR_FAR_STOPS: filters.maxDemandSumForFarStops,
+      MIN_CLOSER_THRESHOLD: filters.minCloserThreshold,
     };
 
     try {
@@ -111,6 +113,7 @@ function Dashboard() {
       distanceThreshold: 3,
       demandIgnoreThreshold: 1,
       maxDemandSumForFarStops: 2,
+      minCloserThreshold: 0.5,
     });
     setSelectedBuses([]);
   };
@@ -132,7 +135,7 @@ function Dashboard() {
     <div className="flex flex-col min-h-screen bg-gray-100">
       <Header />
 
-      <div className="flex h-[900px]">
+      <div className="flex h-[1000px]">
         {/* Sidebar */}
         <div className="bg-white shadow-lg border-r border-gray-200 overflow-y-auto">
           <Sidebar
@@ -192,14 +195,14 @@ function Dashboard() {
       </div>
 
       {/* Optional Map Section */}
-      {/* 
+      
       <div className="px-6 pt-4 pb-10">
         <h2 className="text-2xl font-semibold mb-4">Map Visualization</h2>
         <div className="h-[500px] border-t border-gray-300 rounded-lg shadow-md">
           <MapView busRoutes={getFilteredBuses()} />
         </div>
       </div>
-      */}
+
     </div>
   );
 }

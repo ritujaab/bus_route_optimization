@@ -63,7 +63,7 @@ def merge_routes(routes, stop_demands, distance_matrix, college_stop, route_stop
     DISTANCE_THRESHOLD = constraints['DISTANCE_THRESHOLD']
     DEMAND_IGNORE_THRESHOLD = constraints['DEMAND_IGNORE_THRESHOLD']
     MAX_DEMAND_SUM_FOR_FAR_STOPS = constraints['MAX_DEMAND_SUM_FOR_FAR_STOPS']
-    MIN_CLOSER_THRESHOLD = 0.5 # Add this line
+    MIN_CLOSER_THRESHOLD = constraints['MIN_CLOSER_THRESHOLD']
 
     # Save original routes and demands
     original_routes = deepcopy(routes)

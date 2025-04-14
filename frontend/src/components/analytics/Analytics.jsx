@@ -77,7 +77,7 @@ function Analytics({ busRoutes }) {
   return (
     <div className="p-6 text-gray-800">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {/* Removed Buses Card */}
         {analytics.removedBuses.length > 0 && (
           <div className="bg-white shadow-md rounded-lg p-4 border border-gray-200">
@@ -128,20 +128,6 @@ function Analytics({ busRoutes }) {
           </div>
         )}
 
-        {/* Added Buses Card */}
-        {analytics.addedBuses.length > 0 && (
-          <div className="bg-white shadow-md rounded-lg p-4 border border-gray-200">
-            <div className="flex items-center space-x-2">
-              <FaPlusCircle className="text-green-600 text-xl" />
-              <h3 className="text-lg font-semibold text-gray-800">Added Buses</h3>
-            </div>
-            <ul className="mt-4 list-disc pl-5">
-              {analytics.addedBuses.map((busNumber) => (
-                <li key={busNumber} className="text-sm text-gray-700">Bus {busNumber}</li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
 
       {/* If no changes */}

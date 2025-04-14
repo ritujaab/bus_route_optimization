@@ -160,6 +160,25 @@ function Filters({ filters, onFilterChange, onClearFilters, handleSubmit }) {
             onChange={(e) => onFilterChange({ ...filters, maxDemandSumForFarStops: Number(e.target.value) })}
           />
         </div>
+
+        {/* Min Closer Threshold */}
+        <div className='pb-5'>
+          <label className="block text-sm font-medium text-gray-700">
+            Minimum Closer Threshold
+            <span className="ml-1 group relative cursor-pointer inline-block">
+              ℹ️
+              <span className="absolute left-5 top-0 z-10 hidden group-hover:block w-64 bg-gray-700 text-white text-xs rounded py-1 px-2 shadow-lg">
+              In each step, we must go closer to college by at least this number of kilometers.
+              </span>
+            </span>
+          </label>
+          <input
+            type="number"
+            className="w-full border rounded px-3 py-1"
+            value={filters.minCloserThreshold || ''}
+            onChange={(e) => onFilterChange({ ...filters, minCloserThreshold: Number(e.target.value) })}
+          />
+        </div>
       </div>
 
 

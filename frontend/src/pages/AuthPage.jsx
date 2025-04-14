@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const formatFirebaseError = (code) => {
   switch (code) {
@@ -138,7 +139,7 @@ function AuthPage() {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500"
               >
-                {showPassword ? '🙈' : '👁️'}
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>
             </div>
             {!isLogin && password && password.length < 6 && (

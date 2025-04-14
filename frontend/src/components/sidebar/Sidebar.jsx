@@ -9,7 +9,7 @@ function Sidebar({
   onClearFilters,
 }) {
   return (
-    <div className="w-96 bg-white shadow-lg overflow-y-auto flex flex-col border-r border-gray-200">
+    <div className="w-[500px] bg-white shadow-lg overflow-y-auto flex flex-col border-r border-gray-200">
       <div className="p-4 border-b border-gray-200">
         
         {/* Schedule Type Toggle */}

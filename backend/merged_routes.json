@@ -17,6 +17,7 @@
     "Global BS",
     "Shoilg BS",
     "Navallur Cognizant",
+    "Vijayashanthi Apt",
     "College"
   ],
   "11": [
@@ -95,6 +96,7 @@
     "Avichi School",
     "Avichi School",
     "Vadapalani Depot",
+    "Sooriya Hospital",
     "Ram Theatre",
     "Liberty",
     "Kodambakkam Bridge",
@@ -155,6 +157,8 @@
     "Liberty Meenakshi College",
     "Periyar Road(BBC)",
     "Bharathi Nagar(NUR)",
+    "Brindavan Street",
+    "Panigraha Kalyanamandapam",
     "T.Nagar BS Signal(Burkit Road)",
     "Audi Showroom Signal",
     "Saidapet Metro",
@@ -162,6 +166,31 @@
     "Saidapet Court",
     "McDonald's Velachery",
     "Pudupakkam",
+    "College"
+  ],
+  "26": [
+    "Ponniamman Koil",
+    "Balaiah Garden",
+    "Sadasiva Nagar",
+    "Ram Nagar",
+    "Srinivasa Nagar",
+    "College"
+  ],
+  "27": [
+    "Mandaveli Rly St",
+    "Sangeetha",
+    "Mettukuppam Flyover",
+    "Thoraipakkam Flyover",
+    "Perungudi Flyover",
+    "PTC Qtrs BS",
+    "Okkiam Pettai BS",
+    "Karapakkam Temple",
+    "Kumaran Nagar",
+    "Olympia(opp to AGS)",
+    "Sipcot BS",
+    "Victoria Apt. Kazhipatur",
+    "TVH Apt.",
+    "Padur Roundana",
     "College"
   ],
   "28": [
@@ -189,6 +218,7 @@
     "MIT",
     "Indira Mills",
     "Kumaran Kundram",
+    "Muthumaari Amman Kovil Bus Stop",
     "College"
   ],
   "3": [
@@ -203,14 +233,14 @@
     "Independence Day Park",
     "Hotel Saravana Square",
     "Adambakkam Metro",
-    "Ponniamman Koil",
+    "Rani Kalyanamandapam",
+    "Echankadu Signal",
+    "Kovilambakkam BS",
     "College"
   ],
   "33": [
     "Devi Karumariamman Temple",
-    "Ram Nagar",
-    "Rani Kalyanamandapam",
-    "Kovilambakkam BS",
+    "navin flats",
     "Medavakkam Panchayat Office",
     "Sri Sai Baba Temple",
     "Sithalapakkam Jn",
@@ -244,16 +274,6 @@
     "Tansi Nagar",
     "Baby Nagar",
     "Taramani Church",
-    "Thoraipakkam Flyover",
-    "Perungudi Flyover",
-    "PTC Qtrs BS",
-    "Okkiam Pettai BS",
-    "Karapakkam Temple",
-    "Kumaran Nagar",
-    "Sipcot BS",
-    "Victoria Apt. Kazhipatur",
-    "TVH Apt.",
-    "Padur Roundana",
     "Opp to Chetinnad",
     "College"
   ],
@@ -323,6 +343,8 @@
   "5": [
     "Beach Station",
     "Chepauk Stadium (Bells road BS)",
+    "Triplicane",
+    "Ajantha",
     "Valluvar Statue",
     "LUZ Corner",
     "MGR Janaki College",
@@ -332,7 +354,9 @@
     "Vettuvankani (Church)",
     "Peria Neelankarai (vasan eye care)",
     "RTO Office",
-    "Besant Nagar"
+    "Vannandurai",
+    "Besant Nagar",
+    "Aavin (opp Malar H)"
   ],
   "6": [
     "Beach Station",
@@ -349,6 +373,7 @@
     "Ambattur Estate",
     "Decathlon",
     "Maduravoyal Erikarai",
+    "Kolapakkam",
     "College"
   ],
   "9": [

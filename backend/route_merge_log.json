@@ -1,40 +1,605 @@
 {
-  "timestamp": "2025-04-14T17:31:38.365633",
+  "timestamp": "2025-04-14T18:10:24.988386",
   "initial_routes": {
-    "9": {
+    "10": {
       "stops": [
-        "Korattur (Millinium Aprts.)",
-        "Korattur Signal",
-        "TVS BS",
-        "Annanagar W.Depot",
-        "Nerkundram",
-        "Ration Kadai",
+        "Thirumangalam(opp to VR Mahal)",
+        "CPWD Quarters",
+        "Goldmine Hotel",
+        "CMBT Park",
+        "MMDA(valluva H)",
+        "Tirunagar (Periyar Pathai)",
+        "Ashok Pillar",
+        "Kasi Theatre(Hondai Showroom)",
+        "Ekattuthangal(AlagappaU)",
+        "Jeyachandra Pallikaranai",
         "College"
       ],
-      "total_demand": 12,
+      "total_demand": 19,
       "stop_demands": {
-        "Annanagar W.Depot": 2,
-        "Korattur (Millinium Aprts.)": 3,
-        "Korattur Signal": 1,
-        "Ration Kadai": 1,
-        "TVS BS": 5
+        "Ashok Pillar": 1,
+        "CMBT Park": 3,
+        "Jeyachandra Pallikaranai": 4,
+        "Kasi Theatre(Hondai Showroom)": 4,
+        "MMDA(valluva H)": 3,
+        "Tirunagar (Periyar Pathai)": 4
+      }
+    },
+    "27": {
+      "stops": [
+        "Mandaveli Rly St",
+        "Sangeetha",
+        "Mettukuppam Flyover",
+        "Thoraipakkam Flyover",
+        "Perungudi Flyover",
+        "PTC Qtrs BS",
+        "College"
+      ],
+      "total_demand": 17,
+      "stop_demands": {
+        "Mandaveli Rly St": 6,
+        "Mettukuppam Flyover": 4,
+        "PTC Qtrs BS": 2,
+        "Perungudi Flyover": 1,
+        "Sangeetha": 4
+      }
+    },
+    "34": {
+      "stops": [
+        "Adambakkam Ayyapan temple",
+        "Kakkan Bridge",
+        "ngo colony",
+        "Sree Balaji Dental College & Hospital",
+        "SBIOA International School",
+        "College"
+      ],
+      "total_demand": 24,
+      "stop_demands": {
+        "Adambakkam Ayyapan temple": 17,
+        "SBIOA International School": 1,
+        "Sree Balaji Dental College & Hospital": 1,
+        "ngo colony": 5
+      }
+    },
+    "38": {
+      "stops": [
+        "Global BS",
+        "Shoilg BS",
+        "Ponniamman Koil",
+        "Opp. to Alamaram",
+        "Olympia(opp to AGS)",
+        "Navallur Cognizant",
+        "Padur Roundana",
+        "Padur BS",
+        "Opp to Chetinnad",
+        "College"
+      ],
+      "total_demand": 39,
+      "stop_demands": {
+        "Global BS": 5,
+        "Navallur Cognizant": 9,
+        "Olympia(opp to AGS)": 10,
+        "Opp to Chetinnad": 3,
+        "Padur BS": 6,
+        "Padur Roundana": 3,
+        "Ponniamman Koil": 1,
+        "Shoilg BS": 2
+      }
+    },
+    "38a": {
+      "stops": [
+        "Okkiam Pettai BS",
+        "Karapakkam Temple",
+        "Kumaran Nagar",
+        "Sipcot BS",
+        "Victoria Apt. Kazhipatur",
+        "TVH Apt.",
+        "College"
+      ],
+      "total_demand": 31,
+      "stop_demands": {
+        "Karapakkam Temple": 4,
+        "Kumaran Nagar": 11,
+        "Okkiam Pettai BS": 3,
+        "Sipcot BS": 9,
+        "TVH Apt.": 1,
+        "Victoria Apt. Kazhipatur": 3
+      }
+    },
+    "38b": {
+      "stops": [
+        "Navallur Toll Gate",
+        "Kelambakkam(opp.TMB)",
+        "Kelambakkam (opp.police station)",
+        "Chenganmal BS",
+        "Vijayashanthi Apt",
+        "Koman Nagar",
+        "ALTA Apt.",
+        "College"
+      ],
+      "total_demand": 13,
+      "stop_demands": {
+        "ALTA Apt.": 1,
+        "Chenganmal BS": 1,
+        "Kelambakkam (opp.police station)": 5,
+        "Kelambakkam(opp.TMB)": 2,
+        "Koman Nagar": 1,
+        "Vijayashanthi Apt": 3
+      }
+    },
+    "39": {
+      "stops": [
+        "Guindy RS",
+        " Gurunanak College",
+        "Gandhi Rd.Jn",
+        "Dandeeswaran",
+        "Prasanth Hospital",
+        "Vijayanagar",
+        "Tansi Nagar",
+        "Baby Nagar",
+        "Taramani Church",
+        "College"
+      ],
+      "total_demand": 16,
+      "stop_demands": {
+        "Baby Nagar": 4,
+        "Dandeeswaran": 3,
+        "Gandhi Rd.Jn": 1,
+        "Guindy RS": 1,
+        "Gurunanak College": 1,
+        "Tansi Nagar": 5,
+        "Vijayanagar": 1
+      }
+    },
+    "40": {
+      "stops": [
+        "Nesapakkam (Golden Jublie Block)",
+        "Velachery100ft Road Erikarai Signal",
+        "Opp.Murugan KM",
+        "Metro Water",
+        " Pallikaranai Lake",
+        "Oil Mill",
+        "Asan College",
+        "College"
+      ],
+      "total_demand": 18,
+      "stop_demands": {
+        "Asan College": 2,
+        "Metro Water": 1,
+        "Nesapakkam (Golden Jublie Block)": 4,
+        "Oil Mill": 2,
+        "Opp.Murugan KM": 1,
+        "Pallikaranai Lake": 3,
+        "Velachery100ft Road Erikarai Signal": 5
       }
     }
   },
-  "removed_routes": [],
-  "merge_operations": [],
+  "removed_routes": [
+    {
+      "route_id": "34",
+      "stops_assigned": [
+        {
+          "stop": "Adambakkam Ayyapan temple",
+          "to_route": "40",
+          "demand": 17,
+          "position": 1
+        },
+        {
+          "stop": "ngo colony",
+          "to_route": "40",
+          "demand": 5,
+          "position": 1
+        }
+      ]
+    },
+    {
+      "route_id": "38",
+      "stops_assigned": [
+        {
+          "stop": "Global BS",
+          "to_route": "10",
+          "demand": 5,
+          "position": 10
+        },
+        {
+          "stop": "Shoilg BS",
+          "to_route": "10",
+          "demand": 2,
+          "position": 11
+        },
+        {
+          "stop": "Olympia(opp to AGS)",
+          "to_route": "27",
+          "demand": 10,
+          "position": 6
+        },
+        {
+          "stop": "Navallur Cognizant",
+          "to_route": "10",
+          "demand": 9,
+          "position": 12
+        },
+        {
+          "stop": "Padur Roundana",
+          "to_route": "38a",
+          "demand": 3,
+          "position": 6
+        },
+        {
+          "stop": "Padur BS",
+          "to_route": "27",
+          "demand": 6,
+          "position": 7
+        },
+        {
+          "stop": "Opp to Chetinnad",
+          "to_route": "39",
+          "demand": 3,
+          "position": 9
+        }
+      ]
+    },
+    {
+      "route_id": "38a",
+      "stops_assigned": [
+        {
+          "stop": "Okkiam Pettai BS",
+          "to_route": "27",
+          "demand": 3,
+          "position": 6
+        },
+        {
+          "stop": "Karapakkam Temple",
+          "to_route": "27",
+          "demand": 4,
+          "position": 7
+        },
+        {
+          "stop": "Kumaran Nagar",
+          "to_route": "27",
+          "demand": 11,
+          "position": 8
+        },
+        {
+          "stop": "Sipcot BS",
+          "to_route": "27",
+          "demand": 9,
+          "position": 10
+        },
+        {
+          "stop": "Victoria Apt. Kazhipatur",
+          "to_route": "38b",
+          "demand": 3,
+          "position": 1
+        },
+        {
+          "stop": "Padur Roundana",
+          "to_route": "38b",
+          "demand": 3,
+          "position": 2
+        }
+      ]
+    },
+    {
+      "route_id": "38b",
+      "stops_assigned": [
+        {
+          "stop": "Victoria Apt. Kazhipatur",
+          "to_route": "10",
+          "demand": 3,
+          "position": 13
+        },
+        {
+          "stop": "Padur Roundana",
+          "to_route": "10",
+          "demand": 3,
+          "position": 14
+        },
+        {
+          "stop": "Kelambakkam(opp.TMB)",
+          "to_route": "10",
+          "demand": 2,
+          "position": 15
+        },
+        {
+          "stop": "Kelambakkam (opp.police station)",
+          "to_route": "40",
+          "demand": 5,
+          "position": 9
+        },
+        {
+          "stop": "Vijayashanthi Apt",
+          "to_route": "10",
+          "demand": 3,
+          "position": 16
+        }
+      ]
+    },
+    {
+      "route_id": "39",
+      "stops_assigned": [
+        {
+          "stop": "Dandeeswaran",
+          "to_route": "40",
+          "demand": 3,
+          "position": 6
+        },
+        {
+          "stop": "Tansi Nagar",
+          "to_route": "40",
+          "demand": 5,
+          "position": 7
+        },
+        {
+          "stop": "Baby Nagar",
+          "to_route": "40",
+          "demand": 4,
+          "position": 8
+        },
+        {
+          "stop": "Opp to Chetinnad",
+          "to_route": "10",
+          "demand": 3,
+          "position": 15
+        }
+      ]
+    }
+  ],
+  "merge_operations": [
+    {
+      "from_route": "34",
+      "to_route": "40",
+      "stop": "Adambakkam Ayyapan temple",
+      "demand": 17,
+      "insert_position": 1,
+      "timestamp": "2025-04-14T18:10:24.989254"
+    },
+    {
+      "from_route": "34",
+      "to_route": "40",
+      "stop": "ngo colony",
+      "demand": 5,
+      "insert_position": 1,
+      "timestamp": "2025-04-14T18:10:24.989304"
+    },
+    {
+      "from_route": "38",
+      "to_route": "10",
+      "stop": "Global BS",
+      "demand": 5,
+      "insert_position": 10,
+      "timestamp": "2025-04-14T18:10:24.989862"
+    },
+    {
+      "from_route": "38",
+      "to_route": "10",
+      "stop": "Shoilg BS",
+      "demand": 2,
+      "insert_position": 11,
+      "timestamp": "2025-04-14T18:10:24.989913"
+    },
+    {
+      "from_route": "38",
+      "to_route": "27",
+      "stop": "Olympia(opp to AGS)",
+      "demand": 10,
+      "insert_position": 6,
+      "timestamp": "2025-04-14T18:10:24.989974"
+    },
+    {
+      "from_route": "38",
+      "to_route": "10",
+      "stop": "Navallur Cognizant",
+      "demand": 9,
+      "insert_position": 12,
+      "timestamp": "2025-04-14T18:10:24.990024"
+    },
+    {
+      "from_route": "38",
+      "to_route": "38a",
+      "stop": "Padur Roundana",
+      "demand": 3,
+      "insert_position": 6,
+      "timestamp": "2025-04-14T18:10:24.990078"
+    },
+    {
+      "from_route": "38",
+      "to_route": "27",
+      "stop": "Padur BS",
+      "demand": 6,
+      "insert_position": 7,
+      "timestamp": "2025-04-14T18:10:24.990130"
+    },
+    {
+      "from_route": "38",
+      "to_route": "39",
+      "stop": "Opp to Chetinnad",
+      "demand": 3,
+      "insert_position": 9,
+      "timestamp": "2025-04-14T18:10:24.990184"
+    },
+    {
+      "from_route": "38a",
+      "to_route": "27",
+      "stop": "Okkiam Pettai BS",
+      "demand": 3,
+      "insert_position": 6,
+      "timestamp": "2025-04-14T18:10:24.990687"
+    },
+    {
+      "from_route": "38a",
+      "to_route": "27",
+      "stop": "Karapakkam Temple",
+      "demand": 4,
+      "insert_position": 7,
+      "timestamp": "2025-04-14T18:10:24.990734"
+    },
+    {
+      "from_route": "38a",
+      "to_route": "27",
+      "stop": "Kumaran Nagar",
+      "demand": 11,
+      "insert_position": 8,
+      "timestamp": "2025-04-14T18:10:24.990781"
+    },
+    {
+      "from_route": "38a",
+      "to_route": "27",
+      "stop": "Sipcot BS",
+      "demand": 9,
+      "insert_position": 10,
+      "timestamp": "2025-04-14T18:10:24.990834"
+    },
+    {
+      "from_route": "38a",
+      "to_route": "38b",
+      "stop": "Victoria Apt. Kazhipatur",
+      "demand": 3,
+      "insert_position": 1,
+      "timestamp": "2025-04-14T18:10:24.990877"
+    },
+    {
+      "from_route": "38a",
+      "to_route": "38b",
+      "stop": "Padur Roundana",
+      "demand": 3,
+      "insert_position": 2,
+      "timestamp": "2025-04-14T18:10:24.990918"
+    },
+    {
+      "from_route": "38b",
+      "to_route": "10",
+      "stop": "Victoria Apt. Kazhipatur",
+      "demand": 3,
+      "insert_position": 13,
+      "timestamp": "2025-04-14T18:10:24.991384"
+    },
+    {
+      "from_route": "38b",
+      "to_route": "10",
+      "stop": "Padur Roundana",
+      "demand": 3,
+      "insert_position": 14,
+      "timestamp": "2025-04-14T18:10:24.991426"
+    },
+    {
+      "from_route": "38b",
+      "to_route": "10",
+      "stop": "Kelambakkam(opp.TMB)",
+      "demand": 2,
+      "insert_position": 15,
+      "timestamp": "2025-04-14T18:10:24.991465"
+    },
+    {
+      "from_route": "38b",
+      "to_route": "40",
+      "stop": "Kelambakkam (opp.police station)",
+      "demand": 5,
+      "insert_position": 9,
+      "timestamp": "2025-04-14T18:10:24.991504"
+    },
+    {
+      "from_route": "38b",
+      "to_route": "10",
+      "stop": "Vijayashanthi Apt",
+      "demand": 3,
+      "insert_position": 16,
+      "timestamp": "2025-04-14T18:10:24.991557"
+    },
+    {
+      "from_route": "39",
+      "to_route": "40",
+      "stop": "Dandeeswaran",
+      "demand": 3,
+      "insert_position": 6,
+      "timestamp": "2025-04-14T18:10:24.991987"
+    },
+    {
+      "from_route": "39",
+      "to_route": "40",
+      "stop": "Tansi Nagar",
+      "demand": 5,
+      "insert_position": 7,
+      "timestamp": "2025-04-14T18:10:24.992031"
+    },
+    {
+      "from_route": "39",
+      "to_route": "40",
+      "stop": "Baby Nagar",
+      "demand": 4,
+      "insert_position": 8,
+      "timestamp": "2025-04-14T18:10:24.992059"
+    },
+    {
+      "from_route": "39",
+      "to_route": "10",
+      "stop": "Opp to Chetinnad",
+      "demand": 3,
+      "insert_position": 15,
+      "timestamp": "2025-04-14T18:10:24.992092"
+    }
+  ],
   "final_routes": {
-    "9": {
+    "10": {
       "stops": [
-        "Korattur (Millinium Aprts.)",
-        "Korattur Signal",
-        "TVS BS",
-        "Annanagar W.Depot",
-        "Nerkundram",
-        "Ration Kadai",
+        "Thirumangalam(opp to VR Mahal)",
+        "CPWD Quarters",
+        "Goldmine Hotel",
+        "CMBT Park",
+        "MMDA(valluva H)",
+        "Tirunagar (Periyar Pathai)",
+        "Ashok Pillar",
+        "Kasi Theatre(Hondai Showroom)",
+        "Ekattuthangal(AlagappaU)",
+        "Jeyachandra Pallikaranai",
+        "Global BS",
+        "Shoilg BS",
+        "Navallur Cognizant",
+        "Victoria Apt. Kazhipatur",
+        "Padur Roundana",
+        "Opp to Chetinnad",
+        "Kelambakkam(opp.TMB)",
+        "Vijayashanthi Apt",
         "College"
       ],
-      "total_demand": 12
+      "total_demand": 49
+    },
+    "27": {
+      "stops": [
+        "Mandaveli Rly St",
+        "Sangeetha",
+        "Mettukuppam Flyover",
+        "Thoraipakkam Flyover",
+        "Perungudi Flyover",
+        "PTC Qtrs BS",
+        "Okkiam Pettai BS",
+        "Karapakkam Temple",
+        "Kumaran Nagar",
+        "Olympia(opp to AGS)",
+        "Sipcot BS",
+        "Padur BS",
+        "College"
+      ],
+      "total_demand": 60
+    },
+    "40": {
+      "stops": [
+        "Nesapakkam (Golden Jublie Block)",
+        "ngo colony",
+        "Adambakkam Ayyapan temple",
+        "Velachery100ft Road Erikarai Signal",
+        "Opp.Murugan KM",
+        "Metro Water",
+        "Dandeeswaran",
+        "Tansi Nagar",
+        "Baby Nagar",
+        " Pallikaranai Lake",
+        "Oil Mill",
+        "Asan College",
+        "Kelambakkam (opp.police station)",
+        "College"
+      ],
+      "total_demand": 57
     }
   },
   "demand_changes": []

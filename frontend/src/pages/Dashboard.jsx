@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../components/layout/Header';
 import MapView from '../components/map/MapView';
-import Sidebar from '../components/sidebar/Sidebar'; // ✅ Import Sidebar
+import Sidebar from '../components/sidebar/Sidebar';
+import BusList from '../components/sidebar/BusList';
+import Analytics from '../components/analytics/Analytics'; // Dummy file
 import { busRoutePaths as defaultBusRoutePaths } from '../data/extracted_data';
 
 function Dashboard() {
   const [scheduleType, setScheduleType] = useState('normal');
   const [selectedBuses, setSelectedBuses] = useState([]);
+  const [selectedTab, setSelectedTab] = useState('bus'); // <-- Add tab state
   const [filters, setFilters] = useState({
     ssnYears: { year1: false, year2: false, year3: false, year4: false },
     snuYears: { year1: false, year2: false, year3: false, year4: false },
@@ -18,7 +21,6 @@ function Dashboard() {
     demandIgnoreThreshold: 1,
     maxDemandSumForFarStops: 2
   });
-  
 
   const [routeData, setRouteData] = useState([]);
 
@@ -38,7 +40,6 @@ function Dashboard() {
           busNumber,
           routePath: path,
         }));
-        console.log("Fetched route data:", formatted);
         setRouteData(formatted);
       } catch (error) {
         console.error("Error fetching merged route data:", error);
@@ -55,7 +56,7 @@ function Dashboard() {
 
   useEffect(() => {
     fetchRoutes();
-  }, [filters]);
+  }, [JSON.stringify(filters)]);
 
   const handleFilterChange = (updatedFilters) => {
     setFilters(updatedFilters);
@@ -68,7 +69,7 @@ function Dashboard() {
         : [...prev, busNumber]
     );
   };
-  
+
   const handleClearFilters = () => {
     setFilters({
       ssnYears: { year1: false, year2: false, year3: false, year4: false },
@@ -81,7 +82,7 @@ function Dashboard() {
       maxDemandSumForFarStops: 2
     });
     setSelectedBuses([]);
-  };    
+  };
 
   const getFilteredBuses = () => {
     if (selectedBuses.length === 0) return routeData;
@@ -91,22 +92,58 @@ function Dashboard() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <Header />
-      <div className="flex flex-1 overflow-hidden">
-        <Sidebar
-          scheduleType={scheduleType}
-          onScheduleTypeChange={setScheduleType}
-          filters={filters}
-          onFilterChange={handleFilterChange}
-          onClearFilters={handleClearFilters}
-          buses={routeData}
-          selectedBuses={selectedBuses}
-          onBusSelect={handleBusSelect}
-        />
-        {console.log("Filtered buses:", getFilteredBuses())}
-        <div className="flex-1 overflow-auto">
-          <MapView
-            busRoutes={getFilteredBuses()}
+
+      <div className="flex h-[900px]">
+        {/* Sidebar */}
+        <div className="w-96 bg-white shadow-lg border-r border-gray-200 overflow-y-auto">
+          <Sidebar
+            scheduleType={scheduleType}
+            onScheduleTypeChange={setScheduleType}
+            filters={filters}
+            onFilterChange={handleFilterChange}
+            onClearFilters={handleClearFilters}
           />
+        </div>
+
+        {/* Right Pane */}
+        <div className="flex-1 flex flex-col bg-white">
+          {/* Tabs */}
+          <div className="flex border-b border-gray-300">
+            <button
+              className={`px-6 py-3 ${selectedTab === 'bus' ? 'border-b-2 border-blue-600 font-semibold text-blue-600' : 'text-gray-500'}`}
+              onClick={() => setSelectedTab('bus')}
+            >
+              Bus Routes
+            </button>
+            <button
+              className={`px-6 py-3 ${selectedTab === 'analytics' ? 'border-b-2 border-blue-600 font-semibold text-blue-600' : 'text-gray-500'}`}
+              onClick={() => setSelectedTab('analytics')}
+            >
+              Analytics
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="flex-1 overflow-y-auto">
+            {selectedTab === 'bus' ? (
+              <BusList
+                buses={routeData}
+                selectedBuses={selectedBuses}
+                onBusSelect={handleBusSelect}
+                filters={filters}
+              />
+            ) : (
+              <Analytics />
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Section: MapView */}
+      <div className="px-6 pt-4 pb-10">
+        <h2 className="text-2xl font-semibold mb-4">Map Visualization</h2>
+        <div className="h-[500px] border-t border-gray-300 rounded-lg shadow-md">
+          <MapView busRoutes={getFilteredBuses()} />
         </div>
       </div>
     </div>

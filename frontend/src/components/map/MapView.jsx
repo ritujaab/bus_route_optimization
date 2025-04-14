@@ -72,7 +72,7 @@ export default function MapView({ busRoutes }) {
   }, [busRoutes, stops]);
 
   return (
-    <MapContainer center={[13.05, 80.25]} zoom={11} style={{ height: '100vh', width: '100%' }}>
+    <MapContainer center={[13.05, 80.25]} zoom={11} className="h-full w-full">
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
       {busRoutes.map(({ busNumber, routePath }) => {

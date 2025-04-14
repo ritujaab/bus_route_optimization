@@ -1,168 +1,17 @@
 {
-  "timestamp": "2025-04-14T17:31:38.365633",
+  "timestamp": "2025-04-14T19:51:50.602215",
   "initial_routes": {
-    "10": {
+    "9": {
       "stops": [
-        "Thirumangalam(opp to VR Mahal)",
-        "CPWD Quarters",
-        "Goldmine Hotel",
-        "CMBT Park",
-        "MMDA(valluva H)",
-        "Tirunagar (Periyar Pathai)",
-        "Ashok Pillar",
-        "Kasi Theatre(Hondai Showroom)",
-        "Ekattuthangal(AlagappaU)",
-        "Jeyachandra Pallikaranai",
+        "Korattur (Millinium Aprts.)",
+        "Korattur Signal",
+        "TVS BS",
+        "Annanagar W.Depot",
+        "Nerkundram",
+        "Ration Kadai",
         "College"
       ],
-      "total_demand": 19,
-      "stop_demands": {
-        "Ashok Pillar": 1,
-        "CMBT Park": 3,
-        "Jeyachandra Pallikaranai": 4,
-        "Kasi Theatre(Hondai Showroom)": 4,
-        "MMDA(valluva H)": 3,
-        "Tirunagar (Periyar Pathai)": 4
-      }
-    },
-    "27": {
-      "stops": [
-        "Mandaveli Rly St",
-        "Sangeetha",
-        "Mettukuppam Flyover",
-        "Thoraipakkam Flyover",
-        "Perungudi Flyover",
-        "PTC Qtrs BS",
-        "College"
-      ],
-      "total_demand": 17,
-      "stop_demands": {
-        "Mandaveli Rly St": 6,
-        "Mettukuppam Flyover": 4,
-        "PTC Qtrs BS": 2,
-        "Perungudi Flyover": 1,
-        "Sangeetha": 4
-      }
-    },
-    "34": {
-      "stops": [
-        "Adambakkam Ayyapan temple",
-        "Kakkan Bridge",
-        "ngo colony",
-        "Sree Balaji Dental College & Hospital",
-        "SBIOA International School",
-        "College"
-      ],
-      "total_demand": 24,
-      "stop_demands": {
-        "Adambakkam Ayyapan temple": 17,
-        "SBIOA International School": 1,
-        "Sree Balaji Dental College & Hospital": 1,
-        "ngo colony": 5
-      }
-    },
-    "38": {
-      "stops": [
-        "Global BS",
-        "Shoilg BS",
-        "Ponniamman Koil",
-        "Opp. to Alamaram",
-        "Olympia(opp to AGS)",
-        "Navallur Cognizant",
-        "Padur Roundana",
-        "Padur BS",
-        "Opp to Chetinnad",
-        "College"
-      ],
-      "total_demand": 39,
-      "stop_demands": {
-        "Global BS": 5,
-        "Navallur Cognizant": 9,
-        "Olympia(opp to AGS)": 10,
-        "Opp to Chetinnad": 3,
-        "Padur BS": 6,
-        "Padur Roundana": 3,
-        "Ponniamman Koil": 1,
-        "Shoilg BS": 2
-      }
-    },
-    "38a": {
-      "stops": [
-        "Okkiam Pettai BS",
-        "Karapakkam Temple",
-        "Kumaran Nagar",
-        "Sipcot BS",
-        "Victoria Apt. Kazhipatur",
-        "TVH Apt.",
-        "College"
-      ],
-      "total_demand": 31,
-      "stop_demands": {
-        "Karapakkam Temple": 4,
-        "Kumaran Nagar": 11,
-        "Okkiam Pettai BS": 3,
-        "Sipcot BS": 9,
-        "TVH Apt.": 1,
-        "Victoria Apt. Kazhipatur": 3
-      }
-    },
-    "38b": {
-      "stops": [
-        "Navallur Toll Gate",
-        "Kelambakkam(opp.TMB)",
-        "Kelambakkam (opp.police station)",
-        "Chenganmal BS",
-        "Vijayashanthi Apt",
-        "Koman Nagar",
-        "ALTA Apt.",
-        "College"
-      ],
-      "total_demand": 13,
-      "stop_demands": {
-        "ALTA Apt.": 1,
-        "Chenganmal BS": 1,
-        "Kelambakkam (opp.police station)": 5,
-        "Kelambakkam(opp.TMB)": 2,
-        "Koman Nagar": 1,
-        "Vijayashanthi Apt": 3
-      }
-    },
-    "39": {
-      "stops": [
-        "Guindy RS",
-        " Gurunanak College",
-        "Gandhi Rd.Jn",
-        "Dandeeswaran",
-        "Prasanth Hospital",
-        "Vijayanagar",
-        "Tansi Nagar",
-        "Baby Nagar",
-        "Taramani Church",
-        "College"
-      ],
-      "total_demand": 16,
-      "stop_demands": {
-        "Baby Nagar": 4,
-        "Dandeeswaran": 3,
-        "Gandhi Rd.Jn": 1,
-        "Guindy RS": 1,
-        "Gurunanak College": 1,
-        "Tansi Nagar": 5,
-        "Vijayanagar": 1
-      }
-    },
-    "40": {
-      "stops": [
-        "Nesapakkam (Golden Jublie Block)",
-        "Velachery100ft Road Erikarai Signal",
-        "Opp.Murugan KM",
-        "Metro Water",
-        " Pallikaranai Lake",
-        "Oil Mill",
-        "Asan College",
-        "College"
-      ],
-      "total_demand": 18,
+      "total_demand": 12,
       "stop_demands": {
         "Annanagar W.Depot": 2,
         "Korattur (Millinium Aprts.)": 3,
@@ -175,63 +24,14 @@
   "removed_routes": [],
   "merge_operations": [],
   "final_routes": {
-    "10": {
+    "9": {
       "stops": [
-        "Thirumangalam(opp to VR Mahal)",
-        "CPWD Quarters",
-        "Goldmine Hotel",
-        "CMBT Park",
-        "MMDA(valluva H)",
-        "Tirunagar (Periyar Pathai)",
-        "Ashok Pillar",
-        "Kasi Theatre(Hondai Showroom)",
-        "Ekattuthangal(AlagappaU)",
-        "Jeyachandra Pallikaranai",
-        "Global BS",
-        "Shoilg BS",
-        "Navallur Cognizant",
-        "Victoria Apt. Kazhipatur",
-        "Padur Roundana",
-        "Opp to Chetinnad",
-        "Kelambakkam(opp.TMB)",
-        "Vijayashanthi Apt",
-        "College"
-      ],
-      "total_demand": 49
-    },
-    "27": {
-      "stops": [
-        "Mandaveli Rly St",
-        "Sangeetha",
-        "Mettukuppam Flyover",
-        "Thoraipakkam Flyover",
-        "Perungudi Flyover",
-        "PTC Qtrs BS",
-        "Okkiam Pettai BS",
-        "Karapakkam Temple",
-        "Kumaran Nagar",
-        "Olympia(opp to AGS)",
-        "Sipcot BS",
-        "Padur BS",
-        "College"
-      ],
-      "total_demand": 60
-    },
-    "40": {
-      "stops": [
-        "Nesapakkam (Golden Jublie Block)",
-        "ngo colony",
-        "Adambakkam Ayyapan temple",
-        "Velachery100ft Road Erikarai Signal",
-        "Opp.Murugan KM",
-        "Metro Water",
-        "Dandeeswaran",
-        "Tansi Nagar",
-        "Baby Nagar",
-        " Pallikaranai Lake",
-        "Oil Mill",
-        "Asan College",
-        "Kelambakkam (opp.police station)",
+        "Korattur (Millinium Aprts.)",
+        "Korattur Signal",
+        "TVS BS",
+        "Annanagar W.Depot",
+        "Nerkundram",
+        "Ration Kadai",
         "College"
       ],
       "total_demand": 12

@@ -17,21 +17,21 @@ function BusList({ buses, selectedBuses, onBusSelect }) {
         backgroundColor: '#ffffff',
       });
 
-      const imgWidth = 595.28; // A4 width in pt
+      const imgWidth = 595.28;
       const imgHeight = (originalCanvas.height * imgWidth) / originalCanvas.width;
-      const pageHeight = 841.89; // A4 height in pt
+      const pageHeight = 841.89;
 
       const pdf = new jsPDF('p', 'pt', 'a4');
-      let position = 0;
-
       const totalPages = Math.ceil(imgHeight / pageHeight);
 
       for (let i = 0; i < totalPages; i++) {
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
 
-        const sliceHeight = Math.min(originalCanvas.height - i * (pageHeight * originalCanvas.width / imgWidth),
-                                     pageHeight * originalCanvas.width / imgWidth);
+        const sliceHeight = Math.min(
+          originalCanvas.height - i * (pageHeight * originalCanvas.width / imgWidth),
+          pageHeight * originalCanvas.width / imgWidth
+        );
 
         canvas.width = originalCanvas.width;
         canvas.height = sliceHeight;
@@ -77,20 +77,22 @@ function BusList({ buses, selectedBuses, onBusSelect }) {
         ) : (
           <ul className="space-y-2">
             {buses.map((bus) => (
-              <li
-                key={bus.busNumber}
-                className={`w-full px-3 py-2 rounded-md border ${
-                  selectedBuses.includes(bus.busNumber)
-                    ? 'bg-indigo-100 border-indigo-500'
-                    : 'bg-gray-50 border-gray-200'
-                }`}
-              >
-                <div className="font-medium text-base">Bus Route {bus.busNumber}</div>
-                {bus.routePath && (
-                  <div className="mt-1 text-sm text-gray-600">
-                    {bus.routePath.join(' → ')}
-                  </div>
-                )}
+              <li key={bus.busNumber}>
+                <button
+                  onClick={() => onBusSelect(bus.busNumber)}
+                  className={`w-full text-left px-3 py-2 rounded-md border transition ${
+                    selectedBuses.includes(bus.busNumber)
+                      ? 'bg-indigo-100 border-indigo-500'
+                      : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
+                  }`}
+                >
+                  <div className="font-medium text-base">Bus Route {bus.busNumber}</div>
+                  {bus.routePath && (
+                    <div className="mt-1 text-sm text-gray-600">
+                      {bus.routePath.join(' → ')}
+                    </div>
+                  )}
+                </button>
               </li>
             ))}
           </ul>

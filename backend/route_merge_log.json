@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-04-15T00:26:52.678723",
+  "timestamp": "2025-04-15T08:42:39.461194",
   "initial_routes": {
     "9": {
       "stops": [
@@ -11,13 +11,14 @@
         "Ration Kadai",
         "College"
       ],
-      "total_demand": 12,
+      "total_demand": 22,
       "stop_demands": {
-        "Annanagar W.Depot": 2,
-        "Korattur (Millinium Aprts.)": 3,
+        "Annanagar W.Depot": 6,
+        "Korattur (Millinium Aprts.)": 4,
         "Korattur Signal": 1,
-        "Ration Kadai": 1,
-        "TVS BS": 5
+        "Nerkundram": 3,
+        "Ration Kadai": 2,
+        "TVS BS": 6
       }
     }
   },
@@ -34,7 +35,7 @@
         "Ration Kadai",
         "College"
       ],
-      "total_demand": 12
+      "total_demand": 22
     }
   },
   "demand_changes": []

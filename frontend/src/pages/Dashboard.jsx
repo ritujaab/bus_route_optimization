@@ -82,6 +82,7 @@ function Dashboard() {
 
   const fetchRoutes = async () => {
     if (isFilterApplied()) {
+      setLoading(true);
       try {
         const response = await axios.get('http://localhost:5000/api/get_routes');
         const formatted = Object.entries(response.data).map(([busNumber, path]) => ({

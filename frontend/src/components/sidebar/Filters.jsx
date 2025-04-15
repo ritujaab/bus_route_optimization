@@ -23,7 +23,7 @@ function Filters({ filters, onFilterChange, onClearFilters, handleSubmit }) {
   };
   
   const handleClearClick = () => {
-    onClearFilters();  // Calls parent function
+    onClearFilters();  
   };  
 
   return (
@@ -145,7 +145,7 @@ function Filters({ filters, onFilterChange, onClearFilters, handleSubmit }) {
         {/* Max Demand Sum For Far Stops */}
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Max Demand Sum (Far Stops)
+            Max Demand Sum
             <span className="ml-1 group relative cursor-pointer inline-block">
               ℹ️
               <span className="absolute left-5 top-0 z-10 hidden group-hover:block w-64 bg-gray-700 text-white text-xs rounded py-1 px-2 shadow-lg">
@@ -185,14 +185,14 @@ function Filters({ filters, onFilterChange, onClearFilters, handleSubmit }) {
       {/* Buttons */}
       <div className="flex flex-col gap-2">
         <button
-          className="w-full py-2 bg-indigo-600 text-white rounded-md flex items-center justify-center"
+          className="w-full py-2 bg-indigo-600 text-white rounded-md flex items-center justify-center active:bg-gray-500"
           onClick={handleSubmit}
         >
-        Apply Filters
+          Apply
         </button>
 
         <button
-          className="w-full py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400"
+          className="w-full py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 active:bg-gray-500"
           onClick={handleClearClick}
         >
           Clear Filters
